@@ -3,8 +3,8 @@ Documentation     I want to move my character. If they attempt to move past a bo
 Test Template     Move character
 Library           MoveLibrary.py
 
-*** Our Team logo added to this file as an images
-*** http://topshelf-project.com/slide.1.png
+# Our Team logo added to this file as an images
+# http://topshelf-project.com/slide.1.png
 
 *** Test Cases ***                  StartingX     StartingY     StartingMoveCount     Direction     EndingX     EndingY     EndingMoveCount
 Move in the middle of the board     0             0             1                     NORTH         0           1           2
