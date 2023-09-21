@@ -6,3 +6,4 @@ class TestGameController(TestCase):
         testObj = GameController()
         assert testObj.status != None
         
+        
