@@ -10,6 +10,14 @@ class GameApp:
 
     def __init__(self):
         self.controller = GameController()
+        screen_message = """
+           *           * *****  *      *****   *****   *     *  *****
+            *         *  *      *      *      *     *  * * * *  *
+             *   *   *   ***    *      *      *     *  *  *  *  ***
+              * * * *    *      *      *      *     *  *     *  *
+               *   *     *****  *****  *****   *****   *     *  *****
+            """
+        print(screen_message)
 
     def prompt(self, menu: str, validation_fn: Callable[[str], bool]) -> str:
         while True:
