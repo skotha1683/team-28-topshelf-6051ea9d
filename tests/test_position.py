@@ -8,4 +8,4 @@ class TestPosition(TestCase):
         y_coordinate = 1
         testobj = Position(x_coordinate, y_coordinate)
         self.assertIsNotNone(testobj)
-        
+  
