@@ -1,4 +1,5 @@
 import string
+from levelup.controller import Direction
 
 class Character:
     name = ""
@@ -8,3 +9,7 @@ class Character:
 
     def getName(self) -> string:
         return self.name
+    
+    def move(self,direction: Direction):
+        
+        pass
