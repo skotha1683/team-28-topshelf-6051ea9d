@@ -10,6 +10,3 @@ class TestGameController(TestCase):
         testObj = GameController()
         result = testObj.create_character("mickey mouse")
         self.assertEqual(testObj.character.name, "mickey mouse")
-
-        
-        
