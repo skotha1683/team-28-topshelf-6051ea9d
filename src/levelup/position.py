@@ -1,2 +1,2 @@
 class Position:
-    postion_x=0
+    position_x=0
