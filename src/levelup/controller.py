@@ -1,5 +1,6 @@
 import logging
 from dataclasses import dataclass
+from levelup.character import Character
 from enum import Enum
 
 
@@ -28,22 +29,24 @@ class InvalidMoveException(Exception):
 
 class GameController:
 
-
+    character: Character
     status: GameStatus
 
     def __init__(self):
         self.status = GameStatus()
+        self.character = Character(DEFAULT_CHARACTER_NAME)
 
     def start_game(self):
         pass
 
     # Pre-implemented to demonstrate ATDD
     # TODO: Update this if it does not match your design (hint - it doesnt)
-    def create_character(self, character_name: str) -> None:
+    def create_character(self, character_name: str) -> Character:
         if character_name is not None and character_name != "":
-            self.status.character_name = character_name
+            self.character.name = character_name
         else:
-            self.status.character_name = DEFAULT_CHARACTER_NAME
+            self.character.name = DEFAULT_CHARACTER_NAME
+        pass
 
     def move(self, direction: Direction) -> None:
         # TODO: Implement move - should call something on another class
