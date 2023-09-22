@@ -16,9 +16,21 @@ class TestGameMap(unittest.TestCase):
         result = self.game_map.current_position
         self.assertEqual(result, (0, 0))
 
-    def test_calculate_position(self):
+    def test_calculate_position_north(self):
         result = self.game_map.calculate_position((3, 3), Direction.NORTH )  # Use "up" instead of "North"
         self.assertEqual(result, (3, 4))
+
+    def test_calculate_position_south(self):
+        result = self.game_map.calculate_position((3, 3), Direction.SOUTH )  # Use "down" instead of "North"
+        self.assertEqual(result, (3, 2))
+    
+    def test_calculate_position_east(self):
+        result = self.game_map.calculate_position((3, 3), Direction.EAST )  # Use "right" instead of "North"
+        self.assertEqual(result, (4, 3))
+
+    def test_calculate_position_west(self):
+        result = self.game_map.calculate_position((3, 3), Direction.WEST )  # Use "left" instead of "North"
+        self.assertEqual(result, (2, 3))
 
     def test_is_position_valid(self):
         result = self.game_map.is_position_valid((4, 4))

@@ -8,10 +8,6 @@ class GameMap:
         self.current_position = (0, 0)  # Set initial position to (0, 0)
         self.move_count = 0
 
-    # def generate_starting_position(self):
-    #     # This method is no longer used, as we set the initial position to (0, 0)
-    #     pass
-
     def generate_starting_position(self):
         x = random.randint(0, 9)  # Replace 0 and 9 with your desired range
         y = random.randint(0, 9)  # Replace 0 and 9 with your desired range
