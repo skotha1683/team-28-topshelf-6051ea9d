@@ -8,6 +8,10 @@ class TestGameMap(unittest.TestCase):
     def setUp(self):
         self.game_map = GameMap()
 
+    def test_init(self):
+        self.assertEqual((0,0), self.game_map.current_position)
+        self.assertEqual(0, self.game_map.move_count)
+
     def test_get_position(self):        
         result = self.game_map.current_position
         self.assertEqual(result, (0, 0))
