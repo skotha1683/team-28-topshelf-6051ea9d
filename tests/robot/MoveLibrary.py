@@ -22,12 +22,12 @@ class MoveLibrary:
 
     def character_xposition_should_be(self, expected):
         end_x = self.controller.status.current_position[0]
-        assert end_x == expected, f"Expected: {expected}, Actual: {end_x}"
+        assert end_x == expected, f"Expected x: {expected}, Actual x: {end_x}"
 
     def character_yposition_should_be(self, expected):
         end_y = self.controller.status.current_position[1]
-        assert end_y == expected, f"Expected: {expected}, Actual: {end_y}"
+        assert end_y == expected, f"Expected y: {expected}, Actual y: {end_y}"
 
     def character_movecount_should_be(self, expected):
         actual = self.controller.status.move_count
-        assert actual == expected, f"Expected: {expected}, Actual: {actual}"
+        assert actual == expected, f"Expected move_count: {expected}, Actual move_couont: {actual}"

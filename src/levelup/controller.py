@@ -53,11 +53,18 @@ class GameController:
     def move(self, direction: Direction) -> None:
         # TODO: Implement move - should call something on another class
         # TODO: Should probably also update the game results
-        pass
+        if direction==Direction.NORTH:
+            self.status.current_position=(self.status.current_position[0], int(self.status.current_position[1])+1)
+        elif direction==Direction.SOUTH:
+            self.status.current_position=(self.status.current_position[0], int(self.status.current_position[1])-1)
+        elif direction==Direction.EAST:
+            self.status.current_position=(int(self.status.current_position[0])+1, self.status.current_position[1])
+        elif direction==Direction.WEST:
+            self.status.current_position=(int(self.status.current_position[0])-1, self.status.current_position[1])           
 
     def set_character_position(self, xycoordinates: tuple) -> None:
         # TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
-        pass
+        self.status.current_position=xycoordinates
 
     def set_current_move_count(self, move_count: int) -> None:
         # TODO: IMPLEMENT THIS TO SET CURRENT MOVE COUNT -- exists to be testable
