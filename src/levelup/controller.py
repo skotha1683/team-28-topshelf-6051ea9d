@@ -4,7 +4,7 @@ from levelup.character import Character
 from enum import Enum
 
 
-DEFAULT_CHARACTER_NAME = "Character"
+DEFAULT_CHARACTER_NAME = "foo"
 
 #TODO: ADD THINGS YOU NEED FOR STATUS
 @dataclass
@@ -29,22 +29,24 @@ class InvalidMoveException(Exception):
 
 class GameController:
 
-    character: Character
+    character = Character(DEFAULT_CHARACTER_NAME)
     status: GameStatus
 
     def __init__(self):
         self.status = GameStatus()
-        self.character = Character(DEFAULT_CHARACTER_NAME)
 
     def start_game(self):
+        self.status.running = True
+        self.status.character_name = self.character.getName()
         pass
 
     # Pre-implemented to demonstrate ATDD
     # TODO: Update this if it does not match your design (hint - it doesnt)
-    def create_character(self, character_name: str) -> Character:
-        if character_name is not None and character_name != "":
-            self.character.name = character_name
+    def create_character(self, new_character_name: str) -> Character:
+        if new_character_name != "":
+            self.character.name = new_character_name
         else:
+            print("use default")
             self.character.name = DEFAULT_CHARACTER_NAME
         pass
 

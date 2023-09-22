@@ -1,9 +1,14 @@
 class GameStatus:
-    DEFAULT_NAME="DEFAULTNAME"
-    running: bool = False
-    character_name: str = DEFAULT_NAME
-    # NOTE - Game status will have this as a tuple. The Position should probably be in a class
-    current_position: tuple = (-100,-100)
-    move_count: int = 0
+    DEFAULT_NAME = "default character name"
+    running: bool
+    character_name: str
+    current_position: tuple
+    move_count: int
+
+    def __init__(self):
+        self.running: bool = False
+        self.character_name: str = self.DEFAULT_NAME
+        self.current_position: tuple = (-100,-100)
+        self.move_count: int = 0
    
    

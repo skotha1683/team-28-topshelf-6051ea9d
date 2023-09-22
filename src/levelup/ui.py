@@ -34,7 +34,7 @@ class GameApp:
     def move_loop(self):
         while True:
             response = self.prompt(
-                f"Where would you like to go? {VALID_DIRECTIONS}\n(or ctrl+c to quit)",
+                f"{self.controller.character.getName()}, where would you like to go? {VALID_DIRECTIONS}\n(or ctrl+c to quit)",
                 lambda x: x in VALID_DIRECTIONS,
             )
             direction = Direction(response)
