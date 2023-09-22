@@ -1,6 +1,7 @@
 import random
 import unittest
 from levelup.gamemap import GameMap
+from levelup.controller import Direction
 
 class TestGameMap(unittest.TestCase):
 
@@ -12,7 +13,7 @@ class TestGameMap(unittest.TestCase):
         self.assertEqual(result, (0, 0))
 
     def test_calculate_position(self):
-        result = self.game_map.calculate_position((3, 3), "up")  # Use "up" instead of "North"
+        result = self.game_map.calculate_position((3, 3), Direction.NORTH )  # Use "up" instead of "North"
         self.assertEqual(result, (3, 4))
 
     def test_is_position_valid(self):

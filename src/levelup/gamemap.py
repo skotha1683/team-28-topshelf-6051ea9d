@@ -1,5 +1,5 @@
 import random
-
+from levelup.controller import Direction
 class GameMap:
     
     number_positions = 100
@@ -19,13 +19,13 @@ class GameMap:
     
     def calculate_position(self, position: tuple, direction):
         x, y = position  # Unpack the current position
-        if direction == "up":
+        if direction == Direction.NORTH:
             y += 1
-        elif direction == "down":
+        elif direction == Direction.SOUTH:
             y -= 1
-        elif direction == "left":
+        elif direction == Direction.WEST:
             x -= 1
-        elif direction == "right":
+        elif direction == Direction.EAST:
             x += 1
 
         # Check if the new position is valid (you can add validation logic here)
