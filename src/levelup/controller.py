@@ -53,15 +53,17 @@ class GameController:
     def move(self, direction: Direction) -> None:
         # TODO: Implement move - should call something on another class
         # TODO: Should probably also update the game results
-        self.status.move_count=self.status.move_count+1
+        
+        
         if direction==Direction.NORTH:
-            self.status.current_position=(self.status.current_position[0], str(int(self.status.current_position[1])+1))
+            self.status.current_position=(self.status.current_position[0], (int(self.status.current_position[1])+1))
         elif direction==Direction.SOUTH:
-            self.status.current_position=(self.status.current_position[0], str(int(self.status.current_position[1])-1))
+            self.status.current_position=(self.status.current_position[0], (int(self.status.current_position[1])-1))
         elif direction==Direction.EAST:
-            self.status.current_position=(str(int(self.status.current_position[0])+1), self.status.current_position[1])
+            self.status.current_position=((int(self.status.current_position[0])+1), self.status.current_position[1])
         elif direction==Direction.WEST:
-            self.status.current_position=(str(int(self.status.current_position[0])-1), self.status.current_position[1])           
+            self.status.current_position=((int(self.status.current_position[0])-1), self.status.current_position[1])           
+        # self.status.move_count+=1
 
     def set_character_position(self, xycoordinates: tuple) -> None:
         # TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
@@ -69,7 +71,7 @@ class GameController:
 
     def set_current_move_count(self, move_count: int) -> None:
         # TODO: IMPLEMENT THIS TO SET CURRENT MOVE COUNT -- exists to be testable
-        self.status.move_count=move_count
+        self.status.move_count = move_count
 
     def get_total_positions(self) -> int:
         # TODO: IMPLEMENT THIS TO GET THE TOTAL POSITIONS FROM THE MAP - - exists to be
