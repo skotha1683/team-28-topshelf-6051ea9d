@@ -18,4 +18,5 @@ class TestCharacterInitWithName(TestCase):
         ARBITRARY_NAME = "Im_Moving"
         testobj = Character(ARBITRARY_NAME)
         result = testobj.move(Direction.WEST)
+        self.assertEqual(ARBITRARY_NAME, testobj.name)
         
